@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
 :root {
     --main-tittle-color: #151875;
     --white-color: #ffffff;
@@ -14,7 +15,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -23,10 +23,20 @@ img {
 
 .app {
     overflow: hidden;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(254, 254, 254);
 }
 
 /* class chung */
+
+.f-js {
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
+}
+
+.f-lato{
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+}
 
 .l-style{
     list-style: none;
@@ -51,7 +61,6 @@ img {
 }
 
 .d-flex.center-center {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -74,17 +83,101 @@ img {
     line-height: calc(49/42);
     color: #1A0B5B;
     text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-style: normal;
 }
 
 .text {
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.6rem;
     line-height: calc(26/16);
     color: rgba(26, 11, 91, 0.3);
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* slider */
+.slider .slick-dots {
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.slider .slick-dots li {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #FB2E86;
+    transform: rotate(-45deg);
+    margin: 0 10px;
+}
+
+.slider .slick-dots .slick-active {
+    background: #FB2E86;
+}
+
+.slick-dots button {
+    display: none;
+}
 /* ------- */
 
+/* featured */
+
+.featured .slick-dots {
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.featured .slick-dots li {
+    width: 16px;
+    height: 4px;
+    background: #FEBAD7;
+    border-radius: 10px;
+    margin: 0 5px;
+    transition: all 0.2s linear;
+}
+
+.featured .slick-dots .slick-active {
+    width: 24px;
+    background: #FB2E86;
+}
+
+/* categories */
+
+.categories .slick-dots {
+    list-style: none;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.categories .slick-dots li {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #FB2E86;
+    border-radius:50%;
+    margin: 0 10px;
+}
+
+.categories .slick-dots .slick-active {
+    background: #FB2E86;
+}
+
+/* ------------ */
 .slider,
 .content {
     margin-bottom: 100px;
@@ -101,8 +194,87 @@ img {
     margin-bottom: 70px;
 }
 
-.footer__contact,
-.footer__categories,
-.footer__custom {
-    margin-right: 50px;
+/* ----------- */
+
+.menu-top {
+    display: none;
+    font-size: 1.6rem;
+    color: rgb(19, 19, 19);
+    margin-left: 40px;
+}
+
+.menu__mobi {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background-color: var(--white-color);
+    flex-direction: column;
+    box-shadow: 0px 4px 8px rgb(0 0 0 / 40%);
+    transform: translateX(120%);
+    transition: all 0.2s linear;
+    width: 160px;
+    padding-top: 10px;
+}
+
+.menu__mobi.menu-active {
+    transform: translateX(0);
+}
+
+.menu__mobi-list {
+    flex-direction: column;
+}
+
+.menu__mobi-setting-item,
+.menu__mobi-item {
+    width: 100%;
+    text-align: center;
+}
+
+.menu__mobi-item div,
+.menu__mobi-item a{
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1.8rem;
+    line-height: calc(22/18);
+    color: #151875;
+}
+
+.menu__mobi-sub-menu,
+.menu__mobi-sub-menu1,
+.menu__mobi-sub-menu2 {
+    display: none;
+}
+
+.menu__mobi-item:nth-child(2):hover .menu__mobi-sub-menu {
+    display: block
+}
+
+.menu__mobi-sub-menu2,
+.menu__mobi-sub-menu1 {
+    width: 100%;
+    margin: 10px 0;
+    text-decoration: none;
+    font-size: 1.8rem;
+    line-height: calc(22/18);
+    color: #151875;
+}
+
+.menu__mobi-setting-item:first-child:hover .menu__mobi-sub-menu1 {
+    display: block;
+}
+
+.menu__mobi-setting-item:nth-child(2):hover .menu__mobi-sub-menu2 {
+    display: block;
+}
+
+.header__item--close {
+    display: none;
+    font-size: 2rem;
+    padding: 8px;
+    position: relative;
+    right: 60px;
 }
